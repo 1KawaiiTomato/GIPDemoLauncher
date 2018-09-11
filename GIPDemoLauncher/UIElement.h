@@ -5,7 +5,7 @@
 #include <string>
 class UIElement
 {
-private:
+protected:
 	float relativeX;
 	float relativeY;
 	float relativeWidth;

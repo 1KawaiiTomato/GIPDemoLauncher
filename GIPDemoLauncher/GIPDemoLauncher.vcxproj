@@ -155,11 +155,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="ElementManager.cpp" />
     <ClCompile Include="GIPDemoLauncher.cpp" />
     <ClCompile Include="UIElement.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Button.h" />
     <ClInclude Include="ElementManager.h" />
     <ClInclude Include="UIElement.h" />
   </ItemGroup>
