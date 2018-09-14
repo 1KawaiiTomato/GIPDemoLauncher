@@ -3,16 +3,20 @@
 #include "allegro5/allegro_native_dialog.h"
 #include <iostream>
 #include <string>
+#include <functional>
 class UIElement
 {
 protected:
+	ALLEGRO_BITMAP *texture;
+public:
 	float relativeX;
 	float relativeY;
 	float relativeWidth;
 	float relativeHeight;
-	ALLEGRO_BITMAP *texture;
-public:
+	std::function<void(void)> onClick;
+	//void(*onClick)();
 	void render();
+	virtual std::string getType();
 	UIElement();
 	UIElement(std::string texturePath, float x, float y);
 	~UIElement();

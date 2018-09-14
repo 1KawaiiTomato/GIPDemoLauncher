@@ -15,6 +15,11 @@ void UIElement::render()
 	}
 }
 
+std::string UIElement::getType()
+{
+	return "Element";
+}
+
 UIElement::UIElement()
 {
 }
