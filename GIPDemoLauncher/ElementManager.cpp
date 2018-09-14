@@ -2,6 +2,14 @@
 
 
 
+void ElementManager::deleteElements()
+{
+	for (auto it : elements) {
+		delete it;
+	}
+	elements.clear();
+}
+
 void ElementManager::update()
 {
 	float w, h;
@@ -47,4 +55,5 @@ ElementManager::ElementManager()
 
 ElementManager::~ElementManager()
 {
+	deleteElements();
 }

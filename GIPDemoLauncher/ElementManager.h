@@ -10,6 +10,7 @@ private:
 	std::vector<UIElement*> elements;
 	ALLEGRO_EVENT_QUEUE *EQ;
 public:
+	void deleteElements();
 	void update();
 	void render();
 	void addElement(UIElement *e);
