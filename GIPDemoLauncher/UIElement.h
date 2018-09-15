@@ -5,10 +5,14 @@
 #include <string>
 #include <functional>
 #include <vector>
+#include <unordered_map>
+
 class UIElement
 {
 public:
 	ALLEGRO_BITMAP *texture;
+	std::unordered_map<std::string, float> values;
+	bool isAnimated;
 	float relativeX;
 	float relativeY;
 	float relativeWidth;

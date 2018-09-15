@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "Button.h"
+#include "Panel.h"
 
 class ElementManager
 {

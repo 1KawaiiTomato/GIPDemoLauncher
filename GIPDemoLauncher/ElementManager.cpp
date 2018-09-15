@@ -42,6 +42,11 @@ void ElementManager::update()
 			}
 		}
 	}
+	for (auto it : elements) {
+		if (it->isAnimated) {
+			static_cast<Panel*>(it)->update();
+		}
+	}
 }
 
 void ElementManager::render()

@@ -159,11 +159,13 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ElementManager.cpp" />
     <ClCompile Include="GIPDemoLauncher.cpp" />
+    <ClCompile Include="Panel.cpp" />
     <ClCompile Include="UIElement.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
     <ClInclude Include="ElementManager.h" />
+    <ClInclude Include="Panel.h" />
     <ClInclude Include="UIElement.h" />
   </ItemGroup>
   <ItemGroup>
