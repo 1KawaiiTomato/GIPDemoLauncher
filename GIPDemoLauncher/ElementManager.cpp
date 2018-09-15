@@ -24,7 +24,7 @@ void ElementManager::update()
 				E.mouse.y > it->relativeY*h && E.mouse.y < it->relativeY*h + it->relativeHeight) {
 				std::cout << it->getType();
 				if (it->getType() == "Button") {
-					static_cast<Button*>(it)->isDown = true;
+					static_cast<Button*>(it)->texture = static_cast<Button*>(it)->textures[1];
 				}
 			}
 		}
@@ -33,7 +33,7 @@ void ElementManager::update()
 		if (E.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
 			for (auto it : elements) {
 				if (it->getType() == "Button") {
-					static_cast<Button*>(it)->isDown = false;
+					static_cast<Button*>(it)->texture = static_cast<Button*>(it)->textures[0];
 					if (E.mouse.x > it->relativeX*w && E.mouse.x < it->relativeX*w + it->relativeWidth &&
 						E.mouse.y > it->relativeY*h && E.mouse.y < it->relativeY*h + it->relativeHeight) {
 						it->onClick();

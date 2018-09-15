@@ -4,11 +4,11 @@
 #include <iostream>
 #include <string>
 #include <functional>
+#include <vector>
 class UIElement
 {
-protected:
-	ALLEGRO_BITMAP *texture;
 public:
+	ALLEGRO_BITMAP *texture;
 	float relativeX;
 	float relativeY;
 	float relativeWidth;
