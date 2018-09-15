@@ -4,7 +4,7 @@
 
 void Panel::scroll(UIElement *p, float speed)
 {
-	p->relativeX+= speed;
+	p->relativeX += speed;
 }
 
 std::string Panel::getType()
@@ -12,10 +12,11 @@ std::string Panel::getType()
 	return "Panel";
 }
 
-Panel::Panel(std::string texturePath, float x, float y, void(*function)(UIElement*, float)) : UIElement(texturePath, x, y)
+Panel::Panel(std::string texturePath, float x, float y, void(*function)(UIElement*, float), float speed) : UIElement(texturePath, x, y)
 {
-	animate = function;
+	this->animate = function;
 	this->isAnimated = true;
+	this->speed = speed;
 }
 
 Panel::Panel(std::string texturePath, float x, float y) : UIElement(texturePath, x, y)
@@ -24,7 +25,7 @@ Panel::Panel(std::string texturePath, float x, float y) : UIElement(texturePath,
 
 void Panel::update()
 {
-	animate(this, -0.0001);
+	animate(this, this->speed);
 }
 
 Panel::Panel()
