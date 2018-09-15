@@ -15,7 +15,7 @@ public:
 	float relativeHeight;
 	std::function<void(void)> onClick;
 	//void(*onClick)();
-	void render();
+	virtual void render();
 	virtual std::string getType();
 	UIElement();
 	UIElement(std::string texturePath, float x, float y);
