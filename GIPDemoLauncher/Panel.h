@@ -22,4 +22,3 @@ public:
 	Panel();
 	~Panel();
 };
-

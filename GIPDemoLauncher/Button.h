@@ -10,4 +10,3 @@ public:
 	Button(std::string texturePath, float x, float y, void(*function)());
 	~Button();
 };
-
