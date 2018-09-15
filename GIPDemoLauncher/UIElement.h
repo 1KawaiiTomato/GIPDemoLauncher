@@ -9,6 +9,8 @@ class UIElement
 protected:
 	ALLEGRO_BITMAP *texture;
 public:
+	float drawY;
+	float angle;
 	bool isAnimated;
 	float relativeX;
 	float relativeY;
