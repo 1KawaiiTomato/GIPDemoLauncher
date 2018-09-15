@@ -4,13 +4,13 @@
 #include <iostream>
 #include <string>
 #include <functional>
+#include <vector>
 #include <unordered_map>
 
 class UIElement
 {
-protected:
-	ALLEGRO_BITMAP *texture;
 public:
+	ALLEGRO_BITMAP *texture;
 	std::unordered_map<std::string, float> values;
 	bool isAnimated;
 	float relativeX;
