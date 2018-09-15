@@ -25,4 +25,3 @@ public:
 	UIElement(std::string texturePath, float x, float y);
 	~UIElement();
 };
-

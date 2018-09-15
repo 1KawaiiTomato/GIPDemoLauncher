@@ -11,4 +11,3 @@ public:
 	Button(std::vector<std::string> texturePath, float x, float y, void(*function)());
 	~Button();
 };
-
