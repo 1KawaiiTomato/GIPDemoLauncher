@@ -2,15 +2,19 @@
 
 
 
-void Panel::scroll(UIElement *p, float speed)
+void Panel::scroll(UIElement *p)
 {
-	p->relativeX -= speed/10;
+	p->relativeX -= p->values["sSpeed"];
+	if (p->relativeX * al_get_display_width(al_get_current_display()) + p->relativeWidth <= 0 + al_get_display_width(al_get_current_display()) || p->relativeX > 0) {
+		p->values["sSpeed"] = -p->values["sSpeed"];
+		p->relativeX -= p->values["sSpeed"];
+	}
 }
 
-void Panel::wobble(UIElement * p, float speed)
+void Panel::wobble(UIElement * p)
 {
-	p->angle+=0.001;
-	p->relativeY = p->relativeY - ((sin(p->angle) * speed));
+	p->values["wAngle"]+=p->values["wSpeed"];
+	p->relativeY = p->relativeY - ((sin(p->values["wAngle"]) * p->values["wHeight"]));
 }
 
 std::string Panel::getType()
@@ -18,12 +22,12 @@ std::string Panel::getType()
 	return "Panel";
 }
 
-Panel::Panel(std::string texturePath, float x, float y, std::vector<std::function<void(UIElement*, float)>> functions, float speed) : UIElement(texturePath, x, y)
+Panel::Panel(std::string texturePath, float x, float y, std::vector<std::function<void(UIElement*)>> functions, std::unordered_map<std::string, float> values) : UIElement(texturePath, x, y)
 {
+	this->values = values;
 	this->animations = functions;
 	this->isAnimated = true;
 	this->speed = speed;
-	this->angle = 0.0f;
 }
 
 Panel::Panel(std::string texturePath, float x, float y) : UIElement(texturePath, x, y)
@@ -33,7 +37,7 @@ Panel::Panel(std::string texturePath, float x, float y) : UIElement(texturePath,
 void Panel::update()
 {
 	for (auto it : animations) {
-		it(this, this->speed);
+		it(this);
 	}
 }
 

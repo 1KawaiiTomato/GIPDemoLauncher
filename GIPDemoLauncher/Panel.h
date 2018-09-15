@@ -1,6 +1,7 @@
 #pragma once
 #include "UIElement.h"
 #include <vector>
+#include <unordered_map>
 
 class Panel :
 	public UIElement
@@ -8,15 +9,15 @@ class Panel :
 private:
 	float speed;
 public:
-	static void scroll(UIElement* p, float speed);
-	static void wobble(UIElement *p, float speed);
+	static void scroll(UIElement* p);
+	static void wobble(UIElement *p);
 
-	std::vector<std::function<void(UIElement*, float)>> animations;
+	std::vector<std::function<void(UIElement*)>> animations;
 
 	std::string getType() override;
 	void update();
 
-	Panel(std::string texturePath, float x, float y, std::vector<std::function<void(UIElement*, float)>> functions, float speed);
+	Panel(std::string texturePath, float x, float y, std::vector<std::function<void(UIElement*)>> functions, std::unordered_map<std::string, float> values);
 	Panel(std::string texturePath, float x, float y);
 	Panel();
 	~Panel();
