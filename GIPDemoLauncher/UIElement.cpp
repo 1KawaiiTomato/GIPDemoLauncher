@@ -28,6 +28,7 @@ UIElement::UIElement(std::string texturePath, float x, float y)
 {
 	this->relativeX = x;
 	this->relativeY = y;
+	this->isAnimated = false;
 	this->texture = al_load_bitmap(texturePath.c_str());
 	
 	if (!texture) {
